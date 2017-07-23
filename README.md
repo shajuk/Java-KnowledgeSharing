@@ -19,7 +19,7 @@ public interface InterfaceB {
 }
 
 public class InterfaceImplementation implements InterfaceA,InterfaceB{
-	@Override
+
 	public void performOperation() {
 	
 		System.out.println(variableOfInterface);
