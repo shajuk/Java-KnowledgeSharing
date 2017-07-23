@@ -1,6 +1,6 @@
 # Java KnowledgeSharing
 
-## Q1) Consider the below scenario
+### Q1) Consider the below scenario
 
 public interface InterfaceA {
 
@@ -32,5 +32,5 @@ public class InterfaceImplementation implements InterfaceA,InterfaceB{
 
 ### What is the output ?
 
-## Answer: This will result in compilation error variables are ambigious for both the sysout.
+### Answer: This will result in compilation error variables are ambigious for both the sysout.
 
