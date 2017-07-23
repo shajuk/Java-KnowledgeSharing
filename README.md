@@ -34,6 +34,8 @@ public class InterfaceImplementation implements InterfaceA,InterfaceB{
 
 ### Answer: This will result in compilation error variables are ambigious for both the sysout.
 
+
+
 ### Q2) Consider the below scenario
 
 public interface InterfaceA {
