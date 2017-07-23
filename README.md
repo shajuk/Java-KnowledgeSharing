@@ -3,6 +3,7 @@
 ## Q1) What is the output ?
 
 public interface InterfaceA {
+
 	public static final int variableOfInterface=10;
 	
 	public static final float anotherVariableOfInterface=50;
@@ -11,6 +12,7 @@ public interface InterfaceA {
 }
 
 public interface InterfaceB {
+
 	public static final int variableOfInterface=20;
 	
 	public static final int anotherVariableOfInterface=50;
