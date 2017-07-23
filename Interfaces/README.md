@@ -1,4 +1,4 @@
-# Java Packages
+# Java Interfaces
 
 ### Q1) Consider the below scenario
 
