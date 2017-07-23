@@ -1,4 +1,4 @@
-# Java KnowledgeSharing
+# Java Packages
 
 ### Q1) Consider the below scenario
 
@@ -91,4 +91,5 @@ public class InterfaceImplementation implements InterfaceA,InterfaceB{
 
 ### Answer: Will result in compilation error on method getResult(). 
 getResult() on line 69: Incompatible with InterfaceA.getResult()
+
 getResult() on line 73: Duplicate method getResult()
