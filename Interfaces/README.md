@@ -1,5 +1,14 @@
 # Java Interfaces
 
+## Some key points on Java Interfaces
+
+- A class would not be able to implement multiple interfaces if the implementing interfaces have a variable with same name. 
+
+- If a class implements multiple interfaces where in implemented interfaces have methods with same name then class with complie only when
+	- Methods having same name have same signature and same return type as well or
+	- Methods having same name have different signature regardless on return type
+
+
 ### Q1) Consider the below scenario
 
 public interface InterfaceA {
