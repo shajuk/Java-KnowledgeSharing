@@ -36,11 +36,9 @@ Following are component of JVM:
 	<li>
 		<b><u>Class Loader sub-system:</u></b>
 		Class loader reads byte code and create the instance of java.lang.class , It performs three main functions of JVM, namely: loading, linking and initialization
-		
 		<ol type="i">
 			<li>
 				Loading : Java ClassLoader loads a java class file into java virtual machine. For this Class loader sub-system follows delegation hierarchy algoritm and uses following class loaders :
-				
 				<ol type="a">
 					<li>
 						Bootstrap class loader – load classes from boot strap class path (JRE/lib/rt.jar). All core java API classes are taken care by boot strap class loader
@@ -52,7 +50,6 @@ Following are component of JVM:
 						Application class loader – responsible to load classes from application level class path (environment variables class path, Manifest)
 					</li>
 				</ol>
-				
 				Among the class loader boot strap class loader gets highest priority. If boot strap class loader is unable to load the class then this responsibility will be taken care by extension class loader. If extension class loader fails to load the class the application class loader loads the class.
 			</li>
 			<li>
