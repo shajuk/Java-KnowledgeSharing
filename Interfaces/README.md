@@ -99,7 +99,7 @@ public class InterfaceImplementation implements InterfaceA,InterfaceB{
 	}
 }
 
-### What is the output ?
+### What is the output?
 
 ### Answer: Will result in compilation error on method getResult(). 
 getResult() on line 69: Incompatible with InterfaceA.getResult()
