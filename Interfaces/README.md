@@ -10,7 +10,7 @@
 	- Methods having same name have same signature and same return type as well or
 	- Methods having same name have different signature regardless on return type
 
-
+- Consider another scenario, two interfaces have same name, same signature but different return type. Parent class implements one of the interface and Child class extends Parent and implements the other interface. This will result in compilation error "incompatible with return type of parent class" unless the return type of overriding method in Child Class is covariant of return type in Parent class's overrriden method.
 
 ### Q1) Consider the below scenario
 
