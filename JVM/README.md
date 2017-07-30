@@ -11,3 +11,12 @@ Further this class file acts as input to class loader sub-system. This sub-syste
 <img alt="JVM Architecture" src="https://github.com/shajuk/Java-KnowledgeSharing/blob/master/JVM/JVM%20Architecture.jpg" width="560"/>
 
 Various <b>memory areas</b> present inside JVM are:
+
+<ol>
+	<li>
+		<b>Method area</b> – contains class level data (Static variables / blocks etc). This method area is shared among all Java Virtual Machine threads.
+	</li>
+	<li>
+		<b>Heap area</b> – by default object level data will be saved (object and corresponding instance variables, arrays etc).  There is only one heap inside a Java virtual machine instance, all threads share it.
+	</li>
+</ol>
