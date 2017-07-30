@@ -19,4 +19,13 @@ Various <b>memory areas</b> present inside JVM are:
 	<li>
 		<b>Heap area</b> – by default object level data will be saved (object and corresponding instance variables, arrays etc).  There is only one heap inside a Java virtual machine instance, all threads share it.
 	</li>
+	<li>
+		<b>Stack area</b> – All local variable will be stored in corresponding runtime stack. For every thread a separate runtime stack will be created. Each and every method called by thread will be stored in corresponding Stack including local variables. Each entry in stack called stack frame which contains local variable array, Operand stack, frame data and Reference to runtime constant pool for class of the current method.
+	</li>
+	<li>
+		<b>PC Register</b> – Holds address of current executing instruction. If the current executing method is ‘native’, then the value of program counter register will be undefined. For every thread a separate PC registers will be created.
+	</li>
+	<li>
+		<b>Native method Stacks</b> – Holds native method information. For every thread a separate stack will be created.
+	</li>
 </ol>
