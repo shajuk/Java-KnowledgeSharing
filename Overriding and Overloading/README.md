@@ -16,8 +16,11 @@ public class MyFoo implements Cloneable
 
 Here client need not type cast MyFoo.clone()
 
-### Q1) Can we override a method with different return types ? 
+### Q2) Can we override a method with different return types ? 
 
 ### Answer:
 
 This will result in compilation error "incompatible with return type of parent class" unless the return type of overriding method in Child Class is covariant of return type in Parent class's overrriden method.
+
+### Examples
+https://github.com/shajuk/JavaExamples/blob/master/src/examples/inheritance/covariant/method/overriding/
