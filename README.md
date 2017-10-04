@@ -1,57 +1,33 @@
-## This repository documents java concepts
+#1 Problem Statement: 
+ Write a query which returns the number of orders placed by the customers whose name starts with ‘'H’ and display the customer name as well.  
+ 
+Design Rules :  1. Display the customers who have placed at least one order.
+2. Return the number of orders with a column name as 'NUMBER_OF_ORDERS'.
+3. Do Not Change the name of the column. Please use as per the design rules
+4. Order of the output columns: NUMBER_OF_ORDERS, CUST_NAME
+5. Sort the output based on the ascending order of cust_name
 
-create or replace package employee_hike_pkg
-is
-procedure employee_hike(emp_id IN number);
-function getManager(deptid IN DEPARTMENTS.DEPARTMENT_ID%type) RETURN VARCHAR2;
-end;
+T_ORDER_PLACEMENT
 
-create or replace package body employee_hike_pkg
-is
-  procedure employee_hike(emp_id IN number)
-  is
-    v_exp number(2);
-    v_hike number(3,2);
-    v_date date;
-  Begin
-   select sysdate into v_date from dual;
-  end employee_hike; 
-  
- function getManager(deptid IN DEPARTMENTS.DEPARTMENT_ID%type) RETURN VARCHAR2
-  is
-    v_name EMPLOYEES.FIRST_NAME%type; 
-  begin
-   select e.LAST_NAME into v_name from departments d 
-    inner join employees e on e.EMPLOYEE_ID=d.MANAGER_ID and d.DEPARTMENT_ID=deptid;
-  return v_name;
-  EXCEPTION
-   when NO_DATA_FOUND then 
-     return 'no records found for input';
-  end getManager;
+ORDER_ID CUST_ID 
 
-end employee_hike_pkg;
+T_CUSTOMER
+CUST_ID CUST_NAME  
 
-//Procedure returning ref cursor
-create or replace procedure getEmployeesByJob(p_job_id IN VARCHAR2, p_emp_refcursor IN OUT SYS_REFCURSOR)
-IS
-BEGIN
-  OPEN p_emp_refcursor FOR select employee_id,last_name,job_id from employees where job_id=p_job_id;
-END;
+Ans 1) select count(o.CUST_ID) as NUMBER_OF_ORDERS, c.CUST_NAME from T_ORDER_PLACEMENT o join T_CUSTOMER c 
+on o.CUST_ID=c.CUST_ID and c.CUST_NAME like 'H%' group by c.CUST_NAME order by c.CUST_NAME
 
+#2 Problem Statement: 
+ An order line can refer any stock which is represented in t_order_details table. 
+ Each stock will have its own defined price which is represented in t_stock_details table. 
+ Write a query to calculate the total average discount percentage for all the orders, 
+ whose stock price is greater than 200. 
 
-DECLARE
-empid employees.employee_id%type;
-lname employees.last_name%type;
-jobId employees.job_id%type;
-p_emp_refcursor SYS_REFCURSOR;
+Design Rules:  1. Return the average discount with the column name as 'AVERAGE_DISCOUNT'
+2. There should not be any other additional columns in the output.
+3. Do Not Change the name of the column.
+4. Round the discount to nearest 2 decimals.
 
-BEGIN
- getEmployeesByJob('SA_REP',p_emp_refcursor);
-  LOOP
-   FETCH p_emp_refcursor into empid, lname, jobId;
-   EXIT WHEN p_emp_refcursor%NOTFOUND;
-   dbms_output.put_line(empid||' '|| lname||' '|| jobId);
-  END LOOP;
-  close p_emp_refcursor;
-END;
+select round((sum(DISCOUNT_PERCENTAGE)/count(*)),2) as AVERAGE_DISCOUNT from t_order_details o join t_stock_details s 
+on o.STOCK_ID=s.STOCK_ID and s.price > 200;
 
