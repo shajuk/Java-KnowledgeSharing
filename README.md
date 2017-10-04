@@ -41,3 +41,8 @@ Design Rules: (Do Not Change the name of the column.Please use as per the below 
  2. Cust_name should be displayed with the column name as NAME 
  3. Order of the output column CUSTOMER_ID,NAME,ORDER_ID 
  4. Sort the output in ascending order based on the customer_id and order_id 
+
+
+
+
+https://stackoverflow.com/questions/46556454/sql-codes-i-tried
