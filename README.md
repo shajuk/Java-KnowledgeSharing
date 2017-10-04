@@ -31,3 +31,13 @@ Design Rules:  1. Return the average discount with the column name as 'AVERAGE_D
 select round((sum(DISCOUNT_PERCENTAGE)/count(*)),2) as AVERAGE_DISCOUNT from t_order_details o join t_stock_details s 
 on o.STOCK_ID=s.STOCK_ID and s.price > 200;
 
+
+#3 Problem Statement: 
+ Write a query to return the Customer_id, Name, Order_Id for the Customers who have placed  
+ more than two items in one order. 
+
+Design Rules: (Do Not Change the name of the column.Please use as per the below design rule) 
+ 1. The cust_id should be displayed with the column name as CUSTOMER_ID 
+ 2. Cust_name should be displayed with the column name as NAME 
+ 3. Order of the output column CUSTOMER_ID,NAME,ORDER_ID 
+ 4. Sort the output in ascending order based on the customer_id and order_id 
